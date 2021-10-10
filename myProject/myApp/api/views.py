@@ -6,6 +6,8 @@ from myApp.extensions import apispec
 from myApp.api.resources import UserResource, UserList
 from myApp.api.schemas import UserSchema
 
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
 blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
 api = Api(blueprint)
@@ -37,3 +39,17 @@ def test_route():
     print([i for i in request.form.items()])
     print('Done')
     return jsonify(dict(status=200, message='check logs for form data'))
+
+@blueprint.route('clone', methods=['POST'])
+def clone_playlist():
+    req_data = request.form
+
+    name = req_data.get('name')
+    url = req_data.get('url')
+
+    if name and url:
+        pass
+    else:
+        pass
+
+    return
