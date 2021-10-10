@@ -1,0 +1,17 @@
+# WARNING: this file is not suitable for production, please use with caution
+version: '3'
+
+services:
+  web:
+    image: ezwalker/myagent
+    build: .
+    command: uwsgi --http 0.0.0.0:5000 --module myApp.wsgi:app
+    env_file:
+      - ./.flaskenv
+    environment:
+      - DATABASE_URI=sqlite:////db/myApp.db
+    volumes:
+      - ./myApp:/code/myApp
+      - ./db/:/db/
+    ports:
+      - "5000:5000"

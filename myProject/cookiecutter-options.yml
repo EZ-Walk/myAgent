@@ -1,0 +1,9 @@
+default_context:
+    project_name: "myProject"
+    app_name: "myApp"
+    python_version: "3.8"
+    admin_user_username: "admin"
+    admin_user_email: "rocketwalker@gmail.com"
+    admin_user_password: "password"
+    use_celery: "no"
+    wsgi_server: "uwsgi"
