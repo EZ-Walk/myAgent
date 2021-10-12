@@ -11,6 +11,7 @@ class User(db.Model):
     email = db.Column(db.String(80), unique=True, nullable=False)
     _password = db.Column("password", db.String(255), nullable=False)
     active = db.Column(db.Boolean, default=True)
+    # Will add a secret key that serves as a stored authenticator for the mobile device calling the API
 
     @hybrid_property
     def password(self):
