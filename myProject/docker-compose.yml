@@ -5,7 +5,7 @@ services:
   web:
     image: ezwalker/myagent
     build: .
-    command: uwsgi --http 0.0.0.0:5000 --module myApp.wsgi:app
+    command: uwsgi --http 0.0.0.0:5001 --module myApp.wsgi:app
     env_file:
       - ./.flaskenv
     environment:
@@ -14,4 +14,4 @@ services:
       - ./myApp:/code/myApp
       - ./db/:/db/
     ports:
-      - "5000:5000"
+      - "5001:5001"
